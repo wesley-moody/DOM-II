@@ -21,16 +21,28 @@ document.querySelectorAll('a.nav-link').forEach(el => {
     })
 })
 
+
+
+
 // double click
 const newImg = document.querySelector('.home .content-section .img-content img');
-// const oldImg = document.querySelector('newImg');
+const oldImg = document.querySelector('newImg');
 
 newImg.addEventListener('dblclick', () => {
-    newImg.src='img/desertbus.jpg';
+    if (newImg.src !== 'img/desertbus.jpg') {
+        newImg.src = 'img/desertbus.jpg';
+    } else {
+        newImg.src = 'img/adventure.jpg';
+    }
+    // newImg.src='img/desertbus.jpg';
 })
 // oldImg.addEventListener('dblclick', () => {
 //     oldImg.src='img/adventure.jpg';
 // })
+
+
+
+
 
 // mouse down/mouse up
 function mouseDown() {
@@ -44,7 +56,10 @@ function mouseUp() {
 document.querySelector('h1').addEventListener('mousedown',() => mouseDown());
 document.querySelector('h1').addEventListener('mouseup', () => mouseUp());
 
+
+
 // //change to dark mode with keydown
+const background = document.querySelector('body');
 document.addEventListener('keydown', (event) => {
     if (background.style.backgroundColor != 'black'){
         background.style.backgroundColor = 'black';
@@ -54,11 +69,17 @@ document.addEventListener('keydown', (event) => {
 
 // change back to light mode with keypress
 document.addEventListener('keypress', (event) => {
+    console.log(background.style.backgroundColor);
     if (background.style.backgroundColor != 'white') {
         background.style.backgroundColor = 'white';
         background.style.color = 'black';
     }
 })
+
+
+
+
+
 
 
 
